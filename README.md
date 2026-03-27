@@ -55,7 +55,7 @@ at 0 violations. Splunk ingests logs from every source in the lab across
 | [active-directory-lab](../active-directory-lab) | AD OU design, GPOs, FreeIPA HBAC policy |
 | [powershell-scripts](../powershell-scripts) | AD provisioning and automation scripts |
 
-## Internal Repos (self-hosted Forgejo at 192.168.11.3)
+## Internal Repos (self-hosted Forgejo)
 
 - `ansible-homelab` — full playbooks, roles, inventory, vault
 - `homelab-docs` — master plan and runbooks
