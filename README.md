@@ -9,6 +9,9 @@ primary landing page for all lab documentation, architecture decisions, and oper
 ---
 
 ## Architecture
+
+![Homelab Topology](diagram/homelab-topology.png)
+
 Internet
 │
 [ER7206] ── Transit VLAN 100 ──▶ [OPNsense VM] ── LAB VLAN 10
