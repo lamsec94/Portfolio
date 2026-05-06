@@ -13,8 +13,6 @@ primary landing page for all lab documentation, architecture decisions, and oper
 ![Homelab Topology](diagram/homelab-topology.png)
 
 
-All inter-VLAN routing handled by OPNsense in a router-on-a-stick configuration.
-Single NAT boundary. MGMT remains untagged on vtnet0.
 
 ---
 
