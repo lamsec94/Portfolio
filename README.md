@@ -10,7 +10,7 @@ primary landing page for all lab documentation, architecture decisions, and oper
 
 ## Architecture
 
-![Homelab Topology](diagram/homelab-topology.png)
+![Homelab Topology](../homelab-network-documentation/images/HOMELAB-NETWORK-ARCHITECTURE.png)
 
 
 
@@ -148,6 +148,7 @@ Ansible Controller on Ubuntu 24.04 managing 12 hosts across 6 inventory groups.
 | [homelab-network-documentation](../homelab-network-documentation) | VLAN layout, OPNsense config, DNS architecture |
 | [splunk-siem](../splunk-siem) | SIEM deployment, log sources, dashboards, UF automation |
 | [homelab-runbooks](../homelab-runbooks) | Operational procedures, SOPs, change log, incident templates |
+| [glpi-itsm-deployment](../Glpi-itsm-deployment) | ITSM platform deployment, LDAP auth, intake forms, asset discovery |
 
 ---
 
