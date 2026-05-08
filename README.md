@@ -10,7 +10,7 @@ primary landing page for all lab documentation, architecture decisions, and oper
 
 ## Architecture
 
-![Homelab Topology](../homelab-network-documentation/images/HOMELAB-NETWORK-ARCHITECTURE.png)
+![Homelab Topology](images/HOMELAB-NETWORK-ARCHITECTURE.png)
 
 
 
