@@ -1,4 +1,4 @@
-# Homelab Infrastructure Portfolio
+# Infrastructure Portfolio
 
 A two-node Proxmox-based homelab engineered to mirror enterprise infrastructure patterns across
 virtualization, identity, networking, security, and automation. This repository serves as the
