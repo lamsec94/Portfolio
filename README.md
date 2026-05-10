@@ -1,8 +1,6 @@
 # Infrastructure & Security Portfolio
 
-A two-node Proxmox-based homelab engineered to mirror enterprise infrastructure patterns across
-virtualization, identity, networking, security, and automation. This repository serves as the
-primary landing page for all lab documentation, architecture decisions, and operational runbooks.
+A two-node Proxmox cluster running enterprise infrastructure across virtualization, identity, networking, security, and automation. Primary landing page for architecture, documentation, and operational runbooks
 
 > **Built by:** Lamar Scott | **GitHub:** [lamsec94](https://github.com/lamsec94) | **Last updated:** May 2026
 
