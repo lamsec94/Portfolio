@@ -116,10 +116,10 @@ Key playbooks:
 ## Documentation
 | Repository | Contents |
 |---|---|
-| active-directory-lab | AD domain design, OU structure, GPOs, PKI, LDAP integration |
-| homelab-network-documentation | VLAN layout, OPNsense config, DNS architecture |
-| homelab-runbooks | Operational procedures, SOPs, change log, incident templates |
-| glpi-itsm-deployment | ITSM platform deployment, LDAP auth, intake forms, asset discovery |
+| [active-directory-lab](https://github.com/lamsec94/active-directory-lab) | AD domain design, OU structure, GPOs, PKI, LDAP integration |
+| [Network-documentation](https://github.com/lamsec94/Network-documentation) | VLAN layout, OPNsense config, DNS architecture |
+| [Runbooks](https://github.com/lamsec94/Runbooks) | Operational procedures, SOPs, change log, incident templates |
+| [Glpi-itsm-deployment](https://github.com/lamsec94/Glpi-itsm-deployment) | ITSM platform deployment, LDAP auth, intake forms, asset discovery |
 
 ---
 
