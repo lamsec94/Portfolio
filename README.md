@@ -12,7 +12,7 @@ Built by: Lamar Scott | GitHub: lamsec94 | Last updated: June 2026
 ---
 
 ## What I Built
-Migrated a flat home network into a fully segmented, enterprise-style infrastructure across 5 VLANs with OPNsense handling all routing and firewall policy. Deployed a dual-node Proxmox cluster running 15 VMs and LXC containers across Windows and Linux workloads. Implemented identity management with Active Directory (Windows Server 2022/2025), enterprise PKI with a wildcard certificate across all 14 internal HTTPS services, Suricata IDS/IPS inline at the routing boundary, and an Ansible automation layer managing the fleet across 5 inventory groups. All services are reverse-proxied through Nginx Proxy Manager with TLS termination via an internal CA.
+Migrated a flat home network into a fully segmented, enterprise-style infrastructure across 5 VLANs with OPNsense handling all routing and firewall policy. Deployed a dual-node Proxmox cluster running 15 VMs and LXC containers across Windows and Linux workloads. Implemented identity management with Active Directory (Windows Server 2022/2025), enterprise PKI with a wildcard certificate across all 14 internal HTTPS services, Suricata IDS on the LAB interface, and an Ansible automation layer managing the fleet across 5 inventory groups. All services are reverse-proxied through Nginx Proxy Manager with TLS termination via an internal CA.
 
 ---
 
@@ -70,9 +70,9 @@ Full detail: [active-directory-lab](https://github.com/lamsec94/active-directory
 ---
 
 ## Security & Monitoring
-Suricata IDS/IPS
-- Inline on OPNsense at the VLAN routing boundary, inspecting inter-VLAN and outbound traffic
-- Alerting on LAN and WAN interfaces with automatic ruleset updates
+Suricata IDS
+- Detection mode on the LAB interface — logs and alerts, does not block
+- Alerts viewable in the OPNsense interface with automatic ruleset updates
 
 Firewall Policy
 - Default deny on all interfaces, no catch-all rules — 12 service-specific rules on the LAB interface
