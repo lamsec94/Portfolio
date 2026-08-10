@@ -51,6 +51,9 @@ Migrated a flat home network into a fully segmented, enterprise-style infrastruc
 | Nginx Proxy Manager | Docker | npm.homelab.local           | Reverse proxy, wildcard HTTPS    |
 | Immich              | LXC    | immich.homelab.local        | Photo management, Docker         |
 | AdGuard Home        | Docker | adguard.homelab.local       | DNS, conditional forwarding      |
+| Rocky10-serv        | VM     | rocky.homelab.local         | Rocky Linux 10, headless         |
+| PBS                 | VM     | pbs.homelab.local           | Proxmox Backup Server            |
+| LibreNMS            | Docker | librenms.homelab.local      | Network monitoring               |
 | Win11 Pro           | VM     | —                           | Domain-joined admin workstation  |
 
 ---
