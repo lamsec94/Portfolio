@@ -12,7 +12,7 @@ Built by: Lamar Scott | GitHub: lamsec94 | Last updated: June 2026
 ---
 
 ## What I Built
-Migrated a flat home network into a fully segmented, enterprise-style infrastructure across 5 VLANs with OPNsense handling all routing and firewall policy. Deployed a dual-node Proxmox cluster running 15 VMs and LXC containers across Windows and Linux workloads. Implemented identity management with Active Directory (Windows Server 2022/2025), enterprise PKI with a wildcard certificate across all 14 internal HTTPS services, Suricata IDS on the LAB interface, and an Ansible automation layer managing the fleet across 5 inventory groups. All services are reverse-proxied through Nginx Proxy Manager with TLS termination via an internal CA.
+Migrated a flat home network into a fully segmented, enterprise-style infrastructure across 5 VLANs with OPNsense handling all routing and firewall policy. Deployed a dual-node Proxmox cluster running 7 VMs and 3 LXC containers across Windows and Linux workloads. Implemented identity management with Active Directory (Windows Server 2022/2025), enterprise PKI with a wildcard certificate across all 13 internal HTTPS services, Suricata IDS on the LAB interface, and an Ansible automation layer managing the fleet across 5 inventory groups. All services are reverse-proxied through Nginx Proxy Manager with TLS termination via an internal CA.
 
 ---
 
@@ -63,7 +63,7 @@ Windows — Active Directory
 - Domain: homelab.local | Primary DC: LAB-DC (WS2022) | Secondary: LAB-DC2 (WS2025)
 - Tiered OU model separating admins, service accounts, groups, users, and computers — delegated Tier 1 help desk with zero group membership, AGDLP group nesting
 - Five GPOs linked at a dedicated computer OU: screen lock (loopback processed), 7-Zip deployment, WSUS targeting, USB storage blocking, Features on Demand source override
-- Enterprise Root CA (homelab-CA) via ADCS — wildcard cert covering all 14 internal services
+- Enterprise Root CA (homelab-CA) via ADCS — wildcard cert covering all 13 internal services
 - LDAP service account pattern (svc-glpi) for least-privilege third-party integration
 
 
@@ -84,7 +84,7 @@ Hardening Baseline (Ansible-enforced on all Linux hosts)
 - SSH key-only auth, ufw default-deny, fail2ban, scheduled patching
 
 PKI
-- All 14 services served over HTTPS with wildcard cert signed by internal homelab-CA
+- All 13 services served over HTTPS with wildcard cert signed by internal homelab-CA
 - CA cert distributed to system trust store and Firefox on Fedora admin workstation
 
 ---
