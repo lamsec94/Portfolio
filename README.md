@@ -18,7 +18,7 @@ Migrated a flat home network into a fully segmented, enterprise-style infrastruc
 
 ## Hardware
 | Node | Device          | RAM   | Role                          |
-|------|-----------------|-------|-------------------------------|
+| ------ | ----------------- | ------- | ------------------------------- |
 | su1  | Lenovo M910t    | 48 GB | Primary Proxmox node          |
 | su2  | HP EliteDesk    | 16 GB | Secondary Proxmox node        |
 | Pi5  | Raspberry Pi 5  | 8 GB  | QDevice, Tailscale jumpbox, NetOps probe |
@@ -30,7 +30,7 @@ Migrated a flat home network into a fully segmented, enterprise-style infrastruc
 
 ## VLAN Design
 | VLAN | Name    | Purpose                           |
-|------|---------|-----------------------------------|
+| ------ | --------- | ----------------------------------- |
 | 1    | MGMT    | Hypervisor and network management |
 | 10   | LAB     | Servers, VMs, admin workstations  |
 | 20   | GUEST   | Guest wireless isolation          |
@@ -41,7 +41,7 @@ Migrated a flat home network into a fully segmented, enterprise-style infrastruc
 
 ## Service Inventory
 | Service             | Type   | Internal URL                | Notes                            |
-|---------------------|--------|-----------------------------|----------------------------------|
+| --------------------- | -------- | ----------------------------- | ---------------------------------- |
 | OPNsense            | VM     | —                           | Firewall, Suricata IDS, DHCP     |
 | LAB-DC (WS2022)     | VM     | —                           | Primary DC, DNS, ADCS, PKI       |
 | LAB-DC2 (WS2025)    | VM     | —                           | Secondary DC        |
@@ -93,7 +93,7 @@ PKI
 Ansible Controller on Ubuntu 24.04.
 
 | Inventory Group  | Members                        |
-|------------------|----------------------------------|
+| ------------------ | ---------------------------------- |
 | proxmox_cluster  | proxmox1, proxmox2             |
 | linux_vms        | ubuntu-server                  |
 | windows_vms      | windows-dc, windows11, LAB-DC2 |
@@ -108,7 +108,7 @@ Key playbooks:
 
 ## Backup & Recovery
 | Scope            | Tool                 | Schedule      | Notes                            |
-|------------------|----------------------|---------------|-----------------------------------|
+| ------------------ | ---------------------- | --------------- | ----------------------------------- |
 | VM snapshots     | Proxmox vzdump + PBS | Weekly Sunday | Both nodes                       |
 | Laptop home dir  | Déjà Dup → Nextcloud | Scheduled     | Fedora workstation               |
 | System snapshots | Timeshift (rsync)    | Pre-change    | Taken before all major changes   |
@@ -118,7 +118,7 @@ Key playbooks:
 
 ## Documentation
 | Repository | Contents |
-|---|---|
+| --- | --- |
 | [active-directory-lab](https://github.com/lamsec94/active-directory-lab) | AD domain design, OU structure, GPOs, PKI, LDAP integration |
 | [Network-documentation](https://github.com/lamsec94/Network-documentation) | VLAN layout, OPNsense config, DNS architecture |
 | [Runbooks](https://github.com/lamsec94/Runbooks) | Operational procedures, SOPs, change log, incident templates |
