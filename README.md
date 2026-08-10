@@ -2,7 +2,7 @@
 
 A two-node Proxmox cluster running enterprise infrastructure across virtualization, identity, networking, security, and automation. Primary landing page for architecture, documentation, and operational runbooks
 
-Built by: Lamar Scott | GitHub: lamsec94 | Last updated: June 2026
+Built by: Lamar Scott | GitHub: lamsec94 | Last updated: August 2026
 
 ---
 
