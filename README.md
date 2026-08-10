@@ -22,9 +22,9 @@ Migrated a flat home network into a fully segmented, enterprise-style infrastruc
 | su1  | Lenovo M910t    | 48 GB | Primary Proxmox node          |
 | su2  | HP EliteDesk    | 16 GB | Secondary Proxmox node        |
 | Pi5  | Raspberry Pi 5  | 8 GB  | QDevice, Tailscale jumpbox, NetOps probe |
-| —    | Netgear GS308EP | —     | Layer-2 VLAN switching        |
-| —    | TP-Link ER7206  | —     | Upstream edge router          |
-| —    | TP-Link AX1800  | —     | AP mode — GUEST + IOT SSIDs   |
+|      | Netgear GS308EP |       | Layer-2 VLAN switching        |
+|      | TP-Link ER7206  |       | Upstream edge router          |
+|      | TP-Link AX1800  |       | AP mode — GUEST + IOT SSIDs   |
 
 ---
 
@@ -42,10 +42,10 @@ Migrated a flat home network into a fully segmented, enterprise-style infrastruc
 ## Service Inventory
 | Service             | Type   | Internal URL                | Notes                            |
 | --------------------- | -------- | ----------------------------- | ---------------------------------- |
-| OPNsense            | VM     | —                           | Firewall, Suricata IDS, DHCP     |
-| LAB-DC (WS2022)     | VM     | —                           | Primary DC, DNS, ADCS, PKI       |
-| LAB-DC2 (WS2025)    | VM     | —                           | Secondary DC        |
-| Ansible Controller  | VM     | —                           | Ubuntu 24.04                     |
+| OPNsense            | VM     |                             | Firewall, Suricata IDS, DHCP     |
+| LAB-DC (WS2022)     | VM     |                             | Primary DC, DNS, ADCS, PKI       |
+| LAB-DC2 (WS2025)    | VM     |                             | Secondary DC        |
+| Ansible Controller  | VM     |                             | Ubuntu 24.04                     |
 | Nextcloud           | LXC    | nextcloud.homelab.local     | File storage, laptop backup      |
 | GLPI                | Docker | glpi.homelab.local          | ITSM, LDAP auth, asset discovery |
 | Nginx Proxy Manager | Docker | npm.homelab.local           | Reverse proxy, wildcard HTTPS    |
@@ -54,7 +54,7 @@ Migrated a flat home network into a fully segmented, enterprise-style infrastruc
 | Rocky10-serv        | VM     | rocky.homelab.local         | Rocky Linux 10, headless         |
 | PBS                 | VM     | pbs.homelab.local           | Proxmox Backup Server            |
 | LibreNMS            | Docker | librenms.homelab.local      | Network monitoring               |
-| Win11 Pro           | VM     | —                           | Domain-joined admin workstation  |
+| Win11 Pro           | VM     |                             | Domain-joined admin workstation  |
 
 ---
 
