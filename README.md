@@ -21,7 +21,7 @@ Migrated a flat home network into a fully segmented, enterprise-style infrastruc
 |------|-----------------|-------|-------------------------------|
 | su1  | Lenovo M910t    | 48 GB | Primary Proxmox node          |
 | su2  | HP EliteDesk    | 16 GB | Secondary Proxmox node        |
-| Pi5  | Raspberry Pi 5  | 8 GB  | AdGuard Home, Tailscale relay |
+| Pi5  | Raspberry Pi 5  | 8 GB  | QDevice, Tailscale jumpbox, NetOps probe |
 | —    | Netgear GS308EP | —     | Layer-2 VLAN switching        |
 | —    | TP-Link ER7206  | —     | Upstream edge router          |
 | —    | TP-Link AX1800  | —     | AP mode — GUEST + IOT SSIDs   |
@@ -50,7 +50,7 @@ Migrated a flat home network into a fully segmented, enterprise-style infrastruc
 | GLPI                | Docker | glpi.homelab.local          | ITSM, LDAP auth, asset discovery |
 | Nginx Proxy Manager | Docker | npm.homelab.local           | Reverse proxy, wildcard HTTPS    |
 | Immich              | LXC    | immich.homelab.local        | Photo management, Docker         |
-| AdGuard Home        | Pi5    | adguard.homelab.local       | DNS, conditional forwarding      |
+| AdGuard Home        | Docker | adguard.homelab.local       | DNS, conditional forwarding      |
 | Win11 Pro           | VM     | —                           | Domain-joined admin workstation  |
 
 ---
