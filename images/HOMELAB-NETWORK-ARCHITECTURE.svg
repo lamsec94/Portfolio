@@ -1,0 +1,212 @@
+<svg viewBox="0 0 1650 640" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1650" height="640" fill="#f4f5f4"/>
+
+  <!-- Title block -->
+  <rect x="20" y="20" width="380" height="60" fill="#ffffff" stroke="#d8dad8" stroke-width="1"/>
+  <text x="34" y="48" font-size="22" font-weight="700" fill="#1a1a1a">Network Architecture</text>
+  <text x="34" y="66" font-size="11" fill="#666666">Proxmox nodes aligned to current inventory. Hostnames only; no internal IPs.</text>
+
+  <!-- Key box -->
+  <rect x="1350" y="18" width="280" height="52" fill="#ffffff" stroke="#d8dad8" stroke-width="1"/>
+  <text x="1362" y="34" font-size="11" font-weight="700" fill="#333333">Key</text>
+  <circle cx="1362" cy="46" r="4" fill="#2f3e52"/><text x="1372" y="50" font-size="10" fill="#333">Hardware</text>
+  <circle cx="1440" cy="46" r="4" fill="#2f8f5b"/><text x="1450" y="50" font-size="10" fill="#333">VLAN 10</text>
+  <circle cx="1510" cy="46" r="4" fill="#2f7fa8"/><text x="1520" y="50" font-size="10" fill="#333">VLAN 20</text>
+  <circle cx="1362" cy="60" r="4" fill="#a83f5a"/><text x="1372" y="64" font-size="10" fill="#333">VLAN 30</text>
+  <circle cx="1440" cy="60" r="4" fill="#7a5aa8"/><text x="1450" y="64" font-size="10" fill="#333">VLAN 100</text>
+
+  <!-- VLAN info boxes -->
+  <rect x="1350" y="80" width="280" height="46" fill="#eaf4ef" stroke="#2f8f5b" stroke-width="1.5"/>
+  <text x="1362" y="100" font-size="13" font-weight="700" fill="#1f6b41">VLAN 20 - Guest</text>
+  <text x="1362" y="116" font-size="10" fill="#4a4a4a">AX1800 AP | Clients</text>
+
+  <rect x="1350" y="134" width="280" height="46" fill="#f7e9ec" stroke="#a83f5a" stroke-width="1.5"/>
+  <text x="1362" y="154" font-size="13" font-weight="700" fill="#8a2e44">VLAN 30 - IoT</text>
+  <text x="1362" y="170" font-size="10" fill="#4a4a4a">IoT Devices</text>
+
+  <rect x="1350" y="188" width="280" height="46" fill="#efe9f7" stroke="#7a5aa8" stroke-width="1.5"/>
+  <text x="1362" y="208" font-size="13" font-weight="700" fill="#5c3f85">VLAN 100 - TRANSIT</text>
+  <text x="1362" y="224" font-size="10" fill="#4a4a4a">Transit Network</text>
+
+  <!-- Central chain -->
+  <g font-size="12">
+    <!-- Internet -->
+    <rect x="600" y="55" width="220" height="34" fill="#ffffff" stroke="#2f3e52" stroke-width="1.2"/>
+    <rect x="606" y="61" width="20" height="20" fill="#2f3e52"/><text x="612" y="76" fill="#fff" font-size="11">I</text>
+    <text x="636" y="72" font-weight="700" fill="#1a1a1a">Internet</text>
+    <text x="636" y="84" font-size="9" fill="#777">external WAN</text>
+    <line x1="710" y1="89" x2="710" y2="103" stroke="#2f3e52" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- Modem -->
+    <rect x="600" y="103" width="220" height="34" fill="#ffffff" stroke="#2f3e52" stroke-width="1.2"/>
+    <rect x="606" y="109" width="20" height="20" fill="#2f3e52"/><text x="612" y="124" fill="#fff" font-size="11">M</text>
+    <text x="636" y="120" font-weight="700" fill="#1a1a1a">Modem</text>
+    <text x="636" y="132" font-size="9" fill="#777">WAN handoff</text>
+    <line x1="710" y1="137" x2="710" y2="151" stroke="#2f3e52" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- ER7206 -->
+    <rect x="600" y="151" width="220" height="34" fill="#ffffff" stroke="#2f3e52" stroke-width="1.2"/>
+    <rect x="606" y="157" width="20" height="20" fill="#2f3e52"/><text x="612" y="172" fill="#fff" font-size="11">R</text>
+    <text x="636" y="168" font-weight="700" fill="#1a1a1a">ER7206 Router</text>
+    <text x="636" y="180" font-size="9" fill="#777">edge router / transit</text>
+    <line x1="710" y1="185" x2="710" y2="199" stroke="#2f3e52" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- OPNsense -->
+    <rect x="600" y="199" width="220" height="34" fill="#fdf1f1" stroke="#b13b3b" stroke-width="1.4"/>
+    <rect x="606" y="205" width="20" height="20" fill="#b13b3b"/><text x="612" y="220" fill="#fff" font-size="11">F</text>
+    <text x="636" y="216" font-weight="700" fill="#1a1a1a">OPNsense Firewall</text>
+    <text x="636" y="228" font-size="9" fill="#777">VM 108 on su1 · VLAN routing &amp; policy</text>
+    <line x1="710" y1="233" x2="710" y2="247" stroke="#2f3e52" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- Switch -->
+    <rect x="600" y="247" width="220" height="34" fill="#ffffff" stroke="#2f3e52" stroke-width="1.2"/>
+    <rect x="606" y="253" width="20" height="20" fill="#2f3e52"/><text x="612" y="268" fill="#fff" font-size="11">S</text>
+    <text x="636" y="264" font-weight="700" fill="#1a1a1a">GS308EP Switch</text>
+    <text x="636" y="276" font-size="9" fill="#777">managed switch and trunks</text>
+  </g>
+
+  <!-- fan-out lines to 4 columns -->
+  <line x1="710" y1="281" x2="710" y2="300" stroke="#2f3e52" stroke-width="1.5"/>
+  <line x1="180" y1="300" x2="1240" y2="300" stroke="#2f3e52" stroke-width="1.5"/>
+  <line x1="180" y1="300" x2="180" y2="314" stroke="#2f3e52" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="560" y1="300" x2="560" y2="314" stroke="#2f3e52" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="900" y1="300" x2="900" y2="314" stroke="#2f3e52" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="1240" y1="300" x2="1240" y2="314" stroke="#2f3e52" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#2f3e52"/>
+    </marker>
+  </defs>
+
+  <!-- ===================== COLUMN: su ===================== -->
+  <g>
+    <rect x="30" y="320" width="300" height="300" fill="none" stroke="#2f8f5b" stroke-width="1.5" stroke-dasharray="5,4"/>
+    <text x="46" y="342" font-size="14" font-weight="700" fill="#1f6b41">VLAN 10 - su</text>
+
+    <rect x="46" y="352" width="268" height="40" fill="#eaf4ef" stroke="#2f8f5b" stroke-width="1.2"/>
+    <rect x="52" y="358" width="20" height="20" fill="#1f6b41"/><text x="58" y="373" fill="#fff" font-size="11">H</text>
+    <text x="80" y="368" font-weight="700" font-size="12" fill="#1a1a1a">su Proxmox Host</text>
+    <text x="80" y="382" font-size="9" fill="#666">Lenovo M910t physical hardware</text>
+
+    <rect x="46" y="398" width="268" height="20" fill="#f0f2f0" stroke="#c8cac8" stroke-width="1"/>
+    <text x="52" y="412" font-size="10" font-weight="700" fill="#444">VMs and services on su</text>
+
+    <!-- Immich -->
+    <rect x="46" y="422" width="126" height="42" fill="#ffffff" stroke="#d8dad8"/>
+    <rect x="52" y="428" width="16" height="16" fill="#2f8fa8"/><text x="57" y="440" fill="#fff" font-size="9">I</text>
+    <text x="74" y="437" font-size="10" font-weight="700" fill="#1a1a1a">Immich</text>
+    <text x="74" y="450" font-size="8" fill="#777">immich.homelab.local</text>
+
+    <!-- Nextcloud -->
+    <rect x="176" y="422" width="138" height="42" fill="#ffffff" stroke="#d8dad8"/>
+    <rect x="182" y="428" width="16" height="16" fill="#2f8fa8"/><text x="187" y="440" fill="#fff" font-size="9">N</text>
+    <text x="204" y="437" font-size="10" font-weight="700" fill="#1a1a1a">Nextcloud</text>
+    <text x="204" y="450" font-size="8" fill="#777">nextcloud.homelab.local</text>
+
+    <!-- LAB-DC -->
+    <rect x="46" y="468" width="126" height="42" fill="#ffffff" stroke="#d8dad8"/>
+    <rect x="52" y="474" width="16" height="16" fill="#2f8fa8"/><text x="58" y="486" fill="#fff" font-size="9">W</text>
+    <text x="74" y="483" font-size="10" font-weight="700" fill="#1a1a1a">LAB-DC</text>
+    <text x="74" y="496" font-size="8" fill="#777">Windows Server 2025</text>
+
+    <!-- Workstation -->
+    <rect x="176" y="468" width="138" height="42" fill="#ffffff" stroke="#d8dad8"/>
+    <rect x="182" y="474" width="16" height="16" fill="#2f8fa8"/><text x="187" y="486" fill="#fff" font-size="9">W</text>
+    <text x="204" y="483" font-size="10" font-weight="700" fill="#1a1a1a">Workstation</text>
+    <text x="204" y="496" font-size="8" fill="#777">Windows 11 domain client</text>
+
+    <!-- OPNsense -->
+    <rect x="46" y="514" width="126" height="42" fill="#ffffff" stroke="#d8dad8"/>
+    <rect x="52" y="520" width="16" height="16" fill="#b13b3b"/><text x="57" y="532" fill="#fff" font-size="9">F</text>
+    <text x="74" y="529" font-size="10" font-weight="700" fill="#1a1a1a">OPNsense</text>
+    <text x="74" y="542" font-size="8" fill="#777">VM 108 · firewall</text>
+
+    <!-- Tailscale -->
+    <rect x="176" y="514" width="138" height="42" fill="#ffffff" stroke="#d8dad8"/>
+    <rect x="182" y="520" width="16" height="16" fill="#7a5aa8"/><text x="187" y="532" fill="#fff" font-size="9">T</text>
+    <text x="204" y="529" font-size="10" font-weight="700" fill="#1a1a1a">Tailscale</text>
+    <text x="204" y="542" font-size="8" fill="#777">remote admin path</text>
+
+    <!-- PBS -->
+    <rect x="46" y="560" width="126" height="42" fill="#ffffff" stroke="#d8dad8"/>
+    <rect x="52" y="566" width="16" height="16" fill="#c07a2f"/><text x="57" y="578" fill="#fff" font-size="9">B</text>
+    <text x="74" y="575" font-size="10" font-weight="700" fill="#1a1a1a">PBS</text>
+    <text x="74" y="588" font-size="8" fill="#777">pbs.homelab.local</text>
+  </g>
+
+  <!-- ===================== COLUMN: Pi5 ===================== -->
+  <g>
+    <rect x="410" y="320" width="220" height="300" fill="none" stroke="#2f8f5b" stroke-width="1.5" stroke-dasharray="5,4"/>
+    <text x="426" y="342" font-size="14" font-weight="700" fill="#1f6b41">VLAN 10 - Pi5</text>
+
+    <rect x="426" y="352" width="188" height="40" fill="#eaf4ef" stroke="#2f8f5b" stroke-width="1.2"/>
+    <rect x="432" y="358" width="20" height="20" fill="#1f6b41"/><text x="438" y="373" fill="#fff" font-size="11">P</text>
+    <text x="460" y="372" font-weight="700" font-size="12" fill="#1a1a1a">Pi5</text>
+
+    <rect x="426" y="398" width="188" height="20" fill="#f0f2f0" stroke="#c8cac8" stroke-width="1"/>
+    <text x="432" y="412" font-size="10" font-weight="700" fill="#444">Pi5 services</text>
+
+    <!-- Tailscale -->
+    <rect x="426" y="422" width="188" height="42" fill="#ffffff" stroke="#d8dad8"/>
+    <rect x="432" y="428" width="16" height="16" fill="#7a5aa8"/><text x="437" y="440" fill="#fff" font-size="9">T</text>
+    <text x="454" y="437" font-size="10" font-weight="700" fill="#1a1a1a">Tailscale</text>
+    <text x="454" y="450" font-size="8" fill="#777">jumpbox</text>
+
+    <!-- NetOps -->
+    <rect x="426" y="468" width="188" height="42" fill="#ffffff" stroke="#d8dad8"/>
+    <rect x="432" y="474" width="16" height="16" fill="#2f8fa8"/><text x="437" y="486" fill="#fff" font-size="9">N</text>
+    <text x="454" y="483" font-size="10" font-weight="700" fill="#1a1a1a">NetOps</text>
+    <text x="454" y="496" font-size="8" fill="#777">probe</text>
+  </g>
+
+  <!-- ===================== COLUMN: su2 ===================== -->
+  <g>
+    <rect x="654" y="320" width="300" height="300" fill="none" stroke="#2f8f5b" stroke-width="1.5" stroke-dasharray="5,4"/>
+    <text x="670" y="342" font-size="14" font-weight="700" fill="#1f6b41">VLAN 10 - su2</text>
+
+    <rect x="670" y="352" width="268" height="40" fill="#eaf4ef" stroke="#2f8f5b" stroke-width="1.2"/>
+    <rect x="676" y="358" width="20" height="20" fill="#1f6b41"/><text x="682" y="373" fill="#fff" font-size="11">H</text>
+    <text x="704" y="368" font-weight="700" font-size="12" fill="#1a1a1a">su2 Proxmox Host</text>
+    <text x="704" y="382" font-size="9" fill="#666">HP EliteDesk physical hardware</text>
+
+    <rect x="670" y="398" width="268" height="20" fill="#f0f2f0" stroke="#c8cac8" stroke-width="1"/>
+    <text x="676" y="412" font-size="10" font-weight="700" fill="#444">VMs and services on su2</text>
+
+    <!-- LAB-DC2 -->
+    <rect x="670" y="422" width="126" height="42" fill="#ffffff" stroke="#d8dad8"/>
+    <rect x="676" y="428" width="16" height="16" fill="#2f8fa8"/><text x="682" y="440" fill="#fff" font-size="9">W</text>
+    <text x="698" y="437" font-size="10" font-weight="700" fill="#1a1a1a">LAB-DC2</text>
+    <text x="698" y="450" font-size="8" fill="#777">Windows Server 2025</text>
+
+    <!-- Docker -->
+    <rect x="800" y="422" width="138" height="42" fill="#ffffff" stroke="#d8dad8"/>
+    <rect x="806" y="428" width="16" height="16" fill="#2f4f8f"/><text x="811" y="440" fill="#fff" font-size="9">D</text>
+    <text x="828" y="437" font-size="10" font-weight="700" fill="#1a1a1a">Docker</text>
+    <text x="828" y="450" font-size="8" fill="#777">npm / dockhand / glpi</text>
+    <text x="828" y="460" font-size="8" fill="#777">homepage / adguard</text>
+  </g>
+
+  <!-- ===================== COLUMN: su3 (NEW) ===================== -->
+  <g>
+    <rect x="978" y="320" width="300" height="300" fill="none" stroke="#2f8f5b" stroke-width="1.5" stroke-dasharray="5,4"/>
+    <text x="994" y="342" font-size="14" font-weight="700" fill="#1f6b41">VLAN 10 - su3</text>
+
+    <rect x="994" y="352" width="268" height="40" fill="#eaf4ef" stroke="#2f8f5b" stroke-width="1.2"/>
+    <rect x="1000" y="358" width="20" height="20" fill="#1f6b41"/><text x="1006" y="373" fill="#fff" font-size="11">H</text>
+    <text x="1028" y="368" font-weight="700" font-size="12" fill="#1a1a1a">su3 Proxmox Host</text>
+    <text x="1028" y="382" font-size="9" fill="#666">HP EliteDesk/ProDesk G2 Mini</text>
+
+    <rect x="994" y="398" width="268" height="20" fill="#f0f2f0" stroke="#c8cac8" stroke-width="1"/>
+    <text x="1000" y="412" font-size="10" font-weight="700" fill="#444">VMs and services on su3</text>
+
+    <!-- Rocky10-serv -->
+    <rect x="994" y="422" width="268" height="42" fill="#ffffff" stroke="#d8dad8"/>
+    <rect x="1000" y="428" width="16" height="16" fill="#b13b3b"/><text x="1005" y="440" fill="#fff" font-size="9">R</text>
+    <text x="1022" y="437" font-size="10" font-weight="700" fill="#1a1a1a">Rocky10-serv</text>
+    <text x="1022" y="450" font-size="8" fill="#777">Rocky Linux 10 · Ansible controller</text>
+  </g>
+
+  <!-- Footer note -->
+  <text x="30" y="632" font-size="9" fill="#999">Native 3-node Proxmox majority quorum · Pi5 QDevice retired · Updated August 16, 2026</text>
+</svg>
