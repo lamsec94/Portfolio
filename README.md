@@ -8,7 +8,7 @@ Built by: Lamar Scott | GitHub: lamsec94 | Last updated: August 2026
 
 ## Architecture
 
-![Network Architecture](images/HOMELAB-NETWORK-ARCHITECTURE.png)
+![Network Architecture](images/HOMELAB-NETWORK-ARCHITECTURE.svg)
 
 ---
 
